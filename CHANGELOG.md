@@ -1,3 +1,7 @@
+# 0.12.1
+* branched exactly off of the old 0.12.0 commit, and fixes issues when deleting multiple widgets of the same type (PRO-3733)
+* package name changed to angular-dashboard-framework-omni-id
+
 # 0.12.0
 
 ## Enhancements

@@ -29,7 +29,7 @@ angular.module('adf', ['adf.provider', 'adf.locale', 'ui.bootstrap'])
   .value('adfTemplatePath', '../src/templates/')
   .value('rowTemplate', '<adf-dashboard-row row="row" adf-model="adfModel" options="options" edit-mode="editMode" ng-repeat="row in column.rows" />')
   .value('columnTemplate', '<adf-dashboard-column column="column" adf-model="adfModel" options="options" edit-mode="editMode" ng-repeat="column in row.columns" />')
-  .value('adfVersion', '0.12.0');
+  .value('adfVersion', '0.12.1');
 
 /*
  * The MIT License
@@ -1675,7 +1675,7 @@ angular.module('adf')
         var deleteWidget = function() {
           var column = $scope.col;
           if (column) {
-            var index = column.widgets.indexOf(definition);
+            var index = column.widgets.map(function(x) { return x.wid; }).indexOf(definition.wid);
             if (index >= 0) {
               column.widgets.splice(index, 1);
             }
