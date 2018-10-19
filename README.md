@@ -16,17 +16,16 @@ A more dynamic example can be found [here](https://github.com/angular-dashboard-
 
 ## Build from source
 
-Install bower and gulp:
+Install gulp:
 
 ```bash
-npm install -g bower
 npm install -g gulp
 ```
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/angular-dashboard-framework/angular-dashboard-framework
+git clone git@github.com:omni-id/angular-dashboard-framework.git
 cd angular-dashboard-framework
 ```
 
@@ -34,7 +33,6 @@ Install dependencies:
 
 ```bash
 npm install
-bower install
 ```
 
 Checkout git submodule widgets:
@@ -63,6 +61,8 @@ The sample and the final build of angular-dashboard-framework are now in the dis
 ## Contributing
 
 Please do not commit changes to the dist folder. The dist folder is only generated for releases.
+Even though checking in dist is not standard convention for npm packages, this was converted from
+a Bower package, and the convention is still applied.
 
 
 ## License
