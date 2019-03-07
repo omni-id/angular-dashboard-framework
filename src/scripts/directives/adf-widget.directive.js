@@ -252,7 +252,9 @@ angular.module('adf')
               angular.extend(definition.config, editScope.definition.config);
               if (widget.edit && widget.edit.reload) {
                 // reload content after edit dialog is closed
-                $scope.$broadcast('widgetConfigChanged');
+                // Added the argument to this broadcast because this definition has
+                // the very latest config values
+                $scope.$broadcast('widgetConfigChanged', definition.config);
               }
               editScope.closeDialog();
             }, function(err){

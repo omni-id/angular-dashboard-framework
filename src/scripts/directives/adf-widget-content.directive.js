@@ -133,7 +133,12 @@ angular.module('adf')
 
     function link($scope, $element) {
       var currentScope = compileWidget($scope, $element, null);
-      $scope.$on('widgetConfigChanged', function() {
+      $scope.$on('widgetConfigChanged', function(e, config) {
+        if(config && typeof config !== 'undefined'){
+          // This makes sure the scopes widget config value gets
+          // updated with the very latest (just saved) values
+          $scope.model.config = config;
+        }        
         currentScope = compileWidget($scope, $element, currentScope);
       });
       $scope.$on('widgetReload', function() {
